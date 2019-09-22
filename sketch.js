@@ -1,4 +1,6 @@
-let user {
+//i fixed it Tang, we had to put an equal sign when we define our objects.
+
+let user = { // <------------------------like here
   firstname: "Kaicong",
   lastname: "Tang",
   color: "black",
@@ -9,7 +11,7 @@ let user {
   fact: "love gaming"
 }
 
-var human {
+var human = { // <------------------------and here
   firstName:"Eddson",
   lastName:"Jose",
   color:"midnight blue",
@@ -20,13 +22,15 @@ var human {
   superhero:"Superman",
   fact:"I am made up of stardust"
   };
-  
+
 function setup() {
   createCanvas(400, 400);
-
 }
 
 function draw() {
   background(220);
-  text("group randomizer", 200 ,200 ,400, 400);
+  // text("group randomizer", 200 ,200 ,400, 400);
+
+  textSize(32);
+  text(human.firstName, width/2, height/2);
 }
