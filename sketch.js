@@ -1,6 +1,4 @@
-//i fixed it Tang, we had to put an equal sign when we define our objects.
-
-let user = { // <------------------------like here
+let user = {
   firstname: "Kaicong",
   lastname: "Tang",
   color: "black",
@@ -11,7 +9,7 @@ let user = { // <------------------------like here
   fact: "love gaming"
 }
 
-var human = { // <------------------------and here
+var human = { 
   firstName:"Eddson",
   lastName:"Jose",
   color:"midnight blue",
