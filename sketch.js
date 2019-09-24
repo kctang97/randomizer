@@ -56,7 +56,7 @@ let roster = [
     book: "A Brief History of Time",
     movie: "Angry Birds 2",
     game: "Final Fantasy XIV",
-    superhero: "Tony Stark",
+    superHero: "Tony Stark",
     randomFact: "I like cats."
   },{
     firstName: "Sierra",
@@ -166,7 +166,7 @@ let roster = [
     book:"sherlock holmes",
     movie:"Shaun of the Dead",
     game:"osu!",
-    superhero:"batman",
+    superHero:"batman",
     randomfact:"learning japanese"
   },{
     firstName: "Vanessa",
