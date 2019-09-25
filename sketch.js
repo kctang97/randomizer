@@ -1,7 +1,7 @@
 let roster = [
   {
-    firstname: "Kaicong",
-    lastname: "Tang",
+    firstName: "Kaicong",
+    lastName: "Tang",
     color: "black",
     animal: "dog",
     movie: "iron man123",
@@ -219,16 +219,28 @@ let roster = [
     randomFact: "im grumpy"
   },
 ];
+
+let randInd;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  frameRate(1);
-  console.log(roster.length);
+  frameRate(2);
+  // console.log(roster.length);
+
+  // console.log(roster[12].firstName);
 }
 
 function draw() {
   background(0);
   fill(random(100, 255), random(100, 255), random(100, 255));
   textSize(40);
-  text("Welcome", random(1, width), random(1, height));
+  // text(roster[12].firstName,random(0, width), random(0, height));
+  // text(roster[12].randomFact,random(0, width), random(0, height));
+
 }
+
+function mousePressed() {
+  randInd = int(random(roster.length));
+  text(roster[randInd].firstName,random(0, width), random(0, height));
+  roster.splice(randInd, 1);
+}
