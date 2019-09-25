@@ -224,7 +224,7 @@ let randInd;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  frameRate(2);
+  frameRate(1);
   // console.log(roster.length);
 
   // console.log(roster[12].firstName);
