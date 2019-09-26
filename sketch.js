@@ -240,7 +240,8 @@ function draw() {
 }
 
 function mousePressed() {
+  background(random(100),random(100),random(100));
   randInd = int(random(roster.length));
-  text(roster[randInd].firstName,random(0, width), random(0, height));
+  text(roster[randInd].firstName, random(0, width), random(0, height));
   roster.splice(randInd, 1);
 }
