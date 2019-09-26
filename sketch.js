@@ -226,7 +226,6 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   frameRate(1);
   // console.log(roster.length);
-
   // console.log(roster[12].firstName);
 }
 
@@ -236,7 +235,6 @@ function draw() {
   textSize(40);
   // text(roster[12].firstName,random(0, width), random(0, height));
   // text(roster[12].randomFact,random(0, width), random(0, height));
-
 }
 
 function mousePressed() {
