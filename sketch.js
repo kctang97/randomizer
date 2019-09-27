@@ -234,12 +234,9 @@ function setup() {
 
 function draw() {
   fill(random(100, 255), random(100, 255), random(100, 255));
-
   }
   // text(roster[12].firstName,random(0, width), random(0, height));
   // text(roster[12].randomFact,random(0, width), random(0, height));
-
-
 
 function mousePressed() {
   if (roster[0]) {
@@ -248,6 +245,7 @@ function mousePressed() {
     textAlign(CENTER);
     text(roster[randInd].firstName, random(100, width*0.9), random(100, height*0.9));
     roster.splice(randInd, 1);
+    circle(100, 100, random(100, width*0.9), random(100, height*0.9));
   } else {
     background(random(100),random(100),random(100));
     text("Nothing Left", width/2, height/2)
