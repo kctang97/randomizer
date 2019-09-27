@@ -221,25 +221,35 @@ let roster = [
 ];
 
 let randInd;
-
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  frameRate(1);
+  textAlign(CENTER);
+  fill(0);
+  textSize(40);
+  text("Click to Randomize", width/2, height/2);
   // console.log(roster.length);
   // console.log(roster[12].firstName);
 }
 
 function draw() {
-  background(0);
   fill(random(100, 255), random(100, 255), random(100, 255));
-  textSize(40);
+
+  }
   // text(roster[12].firstName,random(0, width), random(0, height));
   // text(roster[12].randomFact,random(0, width), random(0, height));
-}
+
+
 
 function mousePressed() {
-  background(random(100),random(100),random(100));
-  randInd = int(random(roster.length));
-  text(roster[randInd].firstName, random(0, width), random(0, height));
-  roster.splice(randInd, 1);
+  if (roster[0]) {
+    background(random(100),random(100),random(100));
+    randInd = int(random(roster.length));
+    textAlign(CENTER);
+    text(roster[randInd].firstName, random(100, width*0.9), random(100, height*0.9));
+    roster.splice(randInd, 1);
+  } else {
+    background(random(100),random(100),random(100));
+    text("Nothing Left", width/2, height/2)
+  }
 }
