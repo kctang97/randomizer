@@ -245,9 +245,10 @@ function mousePressed() {
     textAlign(CENTER);
     text(roster[randInd].firstName, random(100, width*0.9), random(100, height*0.9));
     roster.splice(randInd, 1);
-    circle(100, 100, random(100, width*0.9), random(100, height*0.9));
+    circle(random(100, width*0.9), random(100, height*0.9), 100);
   } else {
     background(random(100),random(100),random(100));
     text("Nothing Left", width/2, height/2)
   }
+
 }
