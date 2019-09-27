@@ -235,23 +235,30 @@ function setup() {
 }
 
 function draw() {
-  fill(random(100, 255), random(100, 255), random(100, 255));
-  background(255);
-  countDown();
+  // fill(random(100, 255), random(100, 255), random(100, 255));
+  // background(255);
+  if (timer > 0) {
+    countDown();
+
   }
+}
   // text(roster[12].firstName,random(0, width), random(0, height));
   // text(roster[12].randomFact,random(0, width), random(0, height));
 
 function countDown() {
   textSize(100);
+  fill(random(100, 255), random(100, 255), random(100, 255));
+  background(255);
   text(timer, windowWidth / 2, windowHeight / 2);
+
+  // text(timer, windowWidth / 2, windowHeight / 2);
   if (frameCount % 60 == 0 && timer > 0) {
     timer--;
   }
-  if(timer == 0) {
-  frameRate(0);
-  mousePressed();
-  }
+  // if(timer == 0) {
+  // // frameRate(0);
+  // // mousePressed();
+  // }
 }
 
 function mousePressed() {
