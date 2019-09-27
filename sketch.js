@@ -221,27 +221,43 @@ let roster = [
 ];
 
 let randInd;
-
+let userClick = false;
+//let timer = 3;
+
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  frameRate(1);
-  // console.log(roster.length);
 
-  // console.log(roster[12].firstName);
 }
 
-function draw() {
-  background(0);
-  fill(random(100, 255), random(100, 255), random(100, 255));
-  textSize(40);
-  // text(roster[12].firstName,random(0, width), random(0, height));
-  // text(roster[12].randomFact,random(0, width), random(0, height));
+function draw() {;
+  background(255);
+  textAlign(CENTER, CENTER );
+  textSize(100);
+//  countDown();
 
-}
+  if (userClick) {
+    if (roster[0]) {
+      text(50);
+      background(random(100),random(100),random(100));
+      randInd = int(random(roster.length));
+      text(roster[randInd].firstName, random(0, width), random(0, height));
+      roster.splice(randInd, 1);
+    } else {
+      text("Nothing Left", windowWidth / 2, windowHeight / 2);
+    }
+  }
+}
 
 function mousePressed() {
-  background(random(100),random(100),random(100));
-  randInd = int(random(roster.length));
-  text(roster[randInd].firstName, random(0, width), random(0, height));
-  roster.splice(randInd, 1);
+  userClick = true;
 }
+// function countDown() {
+//   text(timer, windowWidth / 2, windowHeight / 2);
+//   if (frameCount % 60 == 0 && timer > 0) {
+//     timer--;
+//   }
+//   if (timer == 0) {
+//     background(0);
+//   }
+// }
