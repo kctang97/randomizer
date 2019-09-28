@@ -219,57 +219,58 @@ let roster = [
     randomFact: "im grumpy"
   },
 ];
-
 let randInd;
-let timer = 3;
-
+let animating = false;
+let xWidth = 0;
+let counter = 0;
+//-------------------------------------------------------------------
 function setup() {
   createCanvas(windowWidth, windowHeight);
   textAlign(CENTER);
   fill(0);
   textSize(40);
-  //  text("Click to Randomize", width/2, height/2);
-
-  // console.log(roster.length);
-  // console.log(roster[12].firstName);
+  text("Click to Randomize", width/2, height/2);
 }
-
+//-------------------------------------------------------------------
 function draw() {
-  // fill(random(100, 255), random(100, 255), random(100, 255));
-  // background(255);
-  if (timer > 0) {
-    countDown();
-
+  counter++;
+  if (counter == 200) {
+    noStroke();
+    fill(random(100, 200), random(100, 200), random(100, 200), 50)
+    circle(random(width), random(height), random(200, 500));
+    counter = 0;
+  }
+  if (animating == true) {
+    noStroke();
+    fill(random(200, 255), random(200, 255), random(200, 255), 80);
+    circle(width/2, height/2, xWidth*1.2);
+    xWidth -= 20;
   }
 }
-  // text(roster[12].firstName,random(0, width), random(0, height));
-  // text(roster[12].randomFact,random(0, width), random(0, height));
-
-function countDown() {
-  textSize(100);
-  fill(random(100, 255), random(100, 255), random(100, 255));
-  background(255);
-  text(timer, windowWidth / 2, windowHeight / 2);
-
-  // text(timer, windowWidth / 2, windowHeight / 2);
-  if (frameCount % 60 == 0 && timer > 0) {
-    timer--;
-  }
-  // if(timer == 0) {
-  // // frameRate(0);
-  // // mousePressed();
-  // }
-}
-
-function mousePressed() {
+//-------------------------------------------------------------------
+function randomizer() {
+  animating = false;
   if (roster[0]) {
-    background(random(100),random(100),random(100));
+    background(random(200, 255),random(200, 255),random(200, 255));
     randInd = int(random(roster.length));
+    fill(random(150, 200), random(150, 200), random(150, 200), 80);
+    circle(width/2, height/2, width*0.2);
     textAlign(CENTER);
-    text(roster[randInd].firstName, random(100, width*0.9), random(100, height*0.9));
+    fill(random(100, 150), random(100, 150), random(100, 150));
+    text(roster[randInd].firstName, width/2, height/2);
     roster.splice(randInd, 1);
   } else {
-    background(random(100),random(100),random(100));
+    fill(random(150, 200), random(150, 200), random(150, 200), 80);
+    circle(width/2, height/2, width*0.2);
+    background(random(200, 255),random(200, 255),random(200, 255));
+    fill(random(100, 150), random(100, 150), random(100, 150));
     text("Nothing Left", width/2, height/2)
   }
+}
+//-------------------------------------------------------------------
+function mousePressed() {
+  animating = true;
+  setTimeout(randomizer, 2000);
+  counter = 0;
+  xWidth = width*1.2;
 }
